@@ -1,9 +1,8 @@
 package com.example.test
 
 fun main() {
-    val eDouble = 3.14233244356
-    val eFloat = 3.14233244356f
+    val a = 23.0
+    val b = 12.0
 
-    println(eDouble)
-    println(eFloat)
+    print(a/b)
 }
