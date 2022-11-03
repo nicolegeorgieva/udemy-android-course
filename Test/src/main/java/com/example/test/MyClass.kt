@@ -1,13 +1,13 @@
 package com.example.test
 
 fun main() {
-    multipleOf2(1, 1000)
+    multipleOf(1, 1000, 13)
 }
 
-fun multipleOf2(first: Int, second: Int) {
+fun multipleOf(first: Int, second: Int, third: Int) {
     for (i in first..second) {
-        if (i % 2 == 0) {
-            println("$i is multiple of 2")
+        if (i % third == 0) {
+            println("$i is multiple of $third")
         }
     }
 }
