@@ -1,13 +1,15 @@
 package com.example.test
 
 fun main() {
-    multipleOf(1, 1000, 13)
+    multipleOf(1, 100, "Action")
 }
 
-fun multipleOf(first: Int, second: Int, multipleOf: Int) {
+fun multipleOf(first: Int, second: Int, genre: String) {
     for (i in first..second) {
-        if (i % multipleOf == 0) {
-            println("$i is multiple of $multipleOf")
+        if (i % 2 == 0 && genre == "Action") {
+            println("Number $i is an action movie multiple of 2.")
+        } else if (genre !== "Action"){
+            println(genre)
         }
     }
 }
