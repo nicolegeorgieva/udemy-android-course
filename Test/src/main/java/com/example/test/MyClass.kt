@@ -1,8 +1,11 @@
 package com.example.test
 
 fun main() {
-    val a = 23.0
-    val b = 12.0
+    val amount = 900
 
-    print(a/b)
+    if(amount == 1000) {
+        print("You're wealthy.")
+    } else {
+        print("You're getting by.")
+    }
 }
