@@ -5,6 +5,8 @@ fun main() {
 
     if (checkAge(catAge)) {
         print("This cat is old.")
+    } else {
+        print("This cat is young.")
     }
 }
 
