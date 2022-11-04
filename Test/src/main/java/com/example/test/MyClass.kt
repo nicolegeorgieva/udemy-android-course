@@ -1,10 +1,10 @@
 package com.example.test
 
 fun main() {
-    calculateCatAge(7)
+    val catAge = calculateCatAge(7)
+    print("This cat is $catAge years old.")
 }
 
-fun calculateCatAge(age: Int) {
-    val catAge = age * 7
-    print("This cat is $catAge years old.")
+fun calculateCatAge(age: Int): Int {
+    return age * 7
 }
