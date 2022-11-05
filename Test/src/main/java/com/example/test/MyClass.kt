@@ -1,9 +1,10 @@
 package com.example.test
 
 fun main() {
-    val secretMap = mapOf("Up" to 1, "Down" to 2, "Left" to 3, "Right" to 4)
+    val myMutableMap = mutableMapOf("One" to 1, "Two" to 2, "Three" to 3)
 
-    if (4 in secretMap.values) print("Yes, it's in.")
+    myMutableMap["Four"] = 4
+    print(myMutableMap)
 }
 
 
