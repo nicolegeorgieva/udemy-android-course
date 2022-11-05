@@ -1,10 +1,10 @@
 package com.example.test
 
 fun main() {
-    val myMutableSet = mutableSetOf(1, 3, 4)
-    myMutableSet.add(4)
-
-    println(myMutableSet)
+    val secretMap = mapOf("Up" to 1, "Down" to 2, "Left" to 3, "Right" to 4)
+    println(secretMap)
+    println(secretMap.keys)
+    println(secretMap.values)
 }
 
 
