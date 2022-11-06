@@ -6,5 +6,9 @@ fun main() {
     print("${car.color} ${car.model}")
 }
 
-class Car(var color: String = "Blue", var model: String = "xmd") {
+class Car(var color: String, var model: String) {
+    init {
+        color = "Yellow"
+        model = "dgdfl"
+    }
 }
