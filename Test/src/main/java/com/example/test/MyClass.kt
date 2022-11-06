@@ -4,7 +4,7 @@ fun main() {
     val myListOfNames = listOf("Nicole", "Iliyan", "Amy")
 
     val found = myListOfNames.filter {
-        it.endsWith("e")
+        it.startsWith("i", ignoreCase = true)
     }
 
     print(found)
