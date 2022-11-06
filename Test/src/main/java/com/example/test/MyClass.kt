@@ -1,18 +1,12 @@
 package com.example.test
 
 fun main() {
-    val person = Person("Iliyan", 25)
-    val person2 = Person("Nicole", 23)
+    val car = Car()
 
-    printPerson(person)
-    printPerson(person2)
+    print("${car.color} ${car.model}")
 }
 
-class Person(
-    val name: String,
-    val age: Int
-)
-
-fun printPerson(person: Person) {
-    println("${person.name} is ${person.age} years old.")
+class Car(color: String = "Blue", model: String = "xmd") {
+    var color: String = color
+    var model: String = model
 }
