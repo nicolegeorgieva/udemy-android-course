@@ -4,7 +4,7 @@ fun main() {
     val myListOfNames = listOf("Nicole", "Iliyan", "Amy")
 
     val found = myListOfNames.filter {
-        it.length > 4
+        it.endsWith("e")
     }
 
     print(found)
