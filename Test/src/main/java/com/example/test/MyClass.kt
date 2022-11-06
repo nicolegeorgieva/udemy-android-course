@@ -1,10 +1,13 @@
 package com.example.test
 
 fun main() {
-    val myMutableMap = mutableMapOf("One" to 1, "Two" to 2, "Three" to 3)
+    val myListOfNames = listOf("Nicole", "Iliyan", "Amy")
 
-    myMutableMap["Four"] = 4
-    print(myMutableMap)
+    val found = myListOfNames.filter {
+        it == "Amy"
+    }
+
+    print(found)
 }
 
 
