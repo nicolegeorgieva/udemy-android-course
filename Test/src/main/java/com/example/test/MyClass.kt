@@ -1,14 +1,20 @@
 package com.example.test
 
 fun main() {
-    println("Hello, ".append("Miss"))
-    println("Nicole".removeFirstAndLastChars())
+    val solution = Solution()
+    print(solution.numJewelsInStones(jewels = "z", stones = "ZZ"))
 }
 
-fun String.append(toAppend: String): String {
-    return this.plus(toAppend)
-}
-
-fun String.removeFirstAndLastChars(): String {
-    return this.substring(1, this.length - 1)
+class Solution {
+    fun numJewelsInStones(jewels: String, stones: String): Int {
+        var result = 0
+        for (x in stones) {
+            for (y in jewels) {
+                if (x == y) {
+                    result += 1
+                }
+            }
+        }
+        return result
+    }
 }
