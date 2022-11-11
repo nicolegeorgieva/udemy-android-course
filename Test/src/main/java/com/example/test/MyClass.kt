@@ -1,5 +1,7 @@
 package com.example.test
 
+import java.io.IOException
+
 fun main() {
     Repository.startFetch()
     getResult(result = Repository.getCurrentState())
@@ -8,6 +10,12 @@ fun main() {
     getResult(result = Repository.getCurrentState())
 
     Repository.error()
+    getResult(result = Repository.getCurrentState())
+
+    Repository.anotherCustomFailure()
+    getResult(result = Repository.getCurrentState())
+
+    Repository.customFailure()
     getResult(result = Repository.getCurrentState())
 }
 
@@ -24,6 +32,12 @@ fun getResult(result: Result) {
         }
         is NotLoading -> {
             println("Idle")
+        }
+        is Failure.AnotherCustomFailure -> {
+            println(result.anotherCustomFailure.toString())
+        }
+        is Failure.CustomFailure -> {
+            println(result.customFailure.toString())
         }
     }
 }
@@ -49,15 +63,29 @@ object Repository {
     fun getCurrentState(): Result {
         return loadState
     }
+
+    fun anotherCustomFailure() {
+        loadState = Failure.AnotherCustomFailure(
+            anotherCustomFailure = NullPointerException("Something went wrong")
+        )
+    }
+
+    fun customFailure() {
+        loadState = Failure.CustomFailure(customFailure = IOException("Custom failure"))
+    }
 }
 
 sealed class Result
-
 data class Success(val dataFetched: String?) : Result()
 data class Error(val exception: Exception) : Result()
-
 object NotLoading : Result()
 object Loading : Result()
+
+
+sealed class Failure : Result() {
+    data class CustomFailure(val customFailure: IOException) : Failure()
+    data class AnotherCustomFailure(val anotherCustomFailure: NullPointerException) : Failure()
+}
 
 //enum class Result {
 //    SUCCESS, ERROR, IDLE, LOADING
