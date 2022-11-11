@@ -1,14 +1,20 @@
 package com.example.test
 
 fun main() {
-    val person = Person(name = "Amy", lastName = "Grace", age = 20)
-    val person2 = Person(name = "Nicole", lastName = "Georgieva", age = 23)
-    val person3 = Person(name = "Iliyan", lastName = "Germanov", age = 25)
-
-    val listOfPeople = listOf(person, person2, person3)
-    listOfPeople.forEach { someone ->
-        println(someone.age)
+    val listOfItems = listOf("Nicole", "Iliyan", "Amy", "Sarah")
+    val finder = Finder(list = listOfItems)
+    finder.findItem(element = "Sarah") {
+        println("Found $it")
     }
 }
 
-data class Person(val name: String, val lastName: String, val age: Int)
+class Finder(private val list: List<String>) {
+    fun findItem(element: String, foundItem: (element: String?) -> Unit) {
+        val itemFound = list.filter {
+            it == element
+        }
+
+        if (itemFound.isEmpty()) foundItem(null) else
+            foundItem(itemFound.first())
+    }
+}
