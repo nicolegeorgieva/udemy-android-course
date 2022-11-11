@@ -25,7 +25,6 @@ fun getResult(result: Result) {
         is NotLoading -> {
             println("Idle")
         }
-        else -> print("N/A")
     }
 }
 
@@ -52,7 +51,7 @@ object Repository {
     }
 }
 
-abstract class Result
+sealed class Result
 
 data class Success(val dataFetched: String?) : Result()
 data class Error(val exception: Exception) : Result()
